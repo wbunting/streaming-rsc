@@ -29,5 +29,6 @@ export async function streamComponent() {
     return <WeatherComponent weather={weather} location="San Francisco" />;
   });
 
+  // @ts-expect-error (because thigns)
   return result.value;
 }

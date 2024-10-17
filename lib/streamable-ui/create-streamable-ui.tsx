@@ -55,7 +55,9 @@ type StreamableUIWrapper = {
 function createStreamableUI(initialValue?: React.ReactNode) {
   let currentValue = initialValue;
   let closed = false;
-  let { row, resolve, reject } = createSuspendedChunk(initialValue);
+  const chunk = createSuspendedChunk(initialValue);
+  const row = chunk.row;
+  let { resolve, reject } = chunk;
 
   function assertStream(method: string) {
     if (closed) {

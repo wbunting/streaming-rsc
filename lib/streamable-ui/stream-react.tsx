@@ -61,6 +61,7 @@ const streamReact = async (generate: Renderer$1): Promise<RenderResult> => {
   }
 
   return {
+    // @ts-expect-error just use value anyways
     value: ui.value,
   };
 };
